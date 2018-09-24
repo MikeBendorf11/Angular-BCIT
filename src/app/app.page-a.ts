@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 })
 export class PageAComponent {
     someItem: string;
+    
 
     constructor() {
         if (sessionStorage.getItem("autosave")) {
