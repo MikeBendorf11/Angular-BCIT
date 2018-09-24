@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
 
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    template: `<p>{{pNum | phonePipe }}</p>
+  `,
+
 })
 export class AppComponent {
-  title = 'myapp2';
+  pNum: string;
+    constructor() {
+        this.pNum = '2/34--5%678._90*1';
+    }
 }
