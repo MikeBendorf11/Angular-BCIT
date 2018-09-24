@@ -1,20 +1,35 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+   {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+Sum:<br>
+<input type="text" pattern="{{pattern}}" maxlength="10" required 
+[(ngModel)]="numbers[0]" name="number0" #number0="ngModel" > +
+<input type="text" pattern="{{pattern}}" maxlength="10" required [(ngModel)]="numbers[1]" name="number1" #number1="ngModel"> &nbsp;
+<button [disabled]="!number0.valid || !number1.valid "(click)='sum()'> = </button>&nbsp;&nbsp;{{displays[0]}}<br><br>
+
+Difference:<br>
+<input type="text" pattern="{{pattern}}" maxlength="10" required 
+[(ngModel)]="numbers[2]" name="number2" #number2="ngModel" > -&nbsp;
+<input type="text" pattern="{{pattern}}" maxlength="10" required [(ngModel)]="numbers[3]" name="number3" #number3="ngModel"> &nbsp;
+<button [disabled]="!number2.valid || !number3.valid "(click)='difference()'> = </button>&nbsp;&nbsp;{{displays[1]}}<br><br>
+
+Product:<br>
+<input type="text" pattern="{{pattern}}" maxlength="10" required 
+[(ngModel)]="numbers[4]" name="number4" #number4="ngModel" > *
+<input type="text" pattern="{{pattern}}" maxlength="10" required [(ngModel)]="numbers[5]" name="number5" #number5="ngModel"> &nbsp;
+<button [disabled]="!number4.valid || !number5.valid "(click)='product()'> = </button>&nbsp;&nbsp;{{displays[2]}}<br><br>
+
+Quotient:<br>
+<input type="text" pattern="{{pattern}}" maxlength="10" required 
+[(ngModel)]="numbers[6]" name="number6" #number6="ngModel" > /&nbsp;
+<input type="text" pattern="{{pattern}}" maxlength="10" required [(ngModel)]="numbers[7]" name="number7" #number7="ngModel"> &nbsp;
+<button [disabled]="!number6.valid || !number7.valid "(click)='quotient()'> = </button>&nbsp;&nbsp;{{displays[3]}}<br><br>
+
+<p *ngIf="number0?.errors?.pattern || number1?.errors?.pattern">Only numbers allowed</p>
+<p *ngIf="number2?.errors?.pattern || number3?.errors?.pattern">Only numbers allowed</p>
+<p *ngIf="number4?.errors?.pattern || number5?.errors?.pattern">Only numbers allowed</p>
+<p *ngIf="number6?.errors?.pattern || number7?.errors?.pattern">Only numbers allowed</p>
