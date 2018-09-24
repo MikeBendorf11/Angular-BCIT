@@ -12,17 +12,9 @@ export class PageBComponent {
     // The constructor sets up the class.
     constructor(private route: ActivatedRoute) {
         let str = "This is where the class is initialized.";
-        console.log(str);
-    }
-
-    // ngOnInit() gets called after the class is set up.
-    // At this point, the class is able to handle the parameters passed to it.
-    ngOnInit() {
-        this.route.params.forEach((params: Params) => {
-            let localID = params['id'];
-            let localName = params['firstname'];
-            this.id = localID;
-            this.firstName = localName;
-        });
+        route.params.forEach(params=>{
+            this.id = params['id'];
+            this.firstName = params['firstname'];
+        })
     }
 }
