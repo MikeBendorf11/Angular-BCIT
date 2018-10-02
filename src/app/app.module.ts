@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule }      from '@angular/core';
+import {ChildComponent } from './app.child';
+import { FormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
-
+import { AppComponent }  from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent, ChildComponent
   ],
   imports: [
     BrowserModule
