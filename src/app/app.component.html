@@ -1,4 +1,7 @@
-<h1>
-  Welcome to {{title}}!
-</h1>
-<input type='text' (keydown)="myKeyDown($event)" (keyup)="myKeyUp($event)">
+<div (mousedown)="myMouseHandler($event, 'mouse down')" (mouseup)="myMouseHandler($event, 'mouse up')" (mousemove)="myMouseHandler($event, 'mouse move')">
+  This area has<br />
+  mouse-down<br />
+  and<br />
+  mouse-up<br />
+  enabled.
+</div>
