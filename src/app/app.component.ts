@@ -4,8 +4,8 @@ import { ChildComponent } from './app.child';
 @Component({
   selector: 'app-root',
   template: `
-  <div *ngFor="let op of operations">
-  <child [childFuncRef]="parentFuncRef" [childFuncRef2]="parentFuncRef2" [opType]="op" [numbers]="this.generateNumber()"></child>
+  <div *ngFor="let op of operations; index as i">
+  <child [childFuncRef]="parentFuncRef" [childFuncRef2]="parentFuncRef2" [opType]="op" [numbers]="i"></child>
   </div>`
 })
 export class AppComponent {
@@ -25,8 +25,5 @@ export class AppComponent {
   }
   public secondCallbackFunction(number) {
     alert("Received from child: " + number);
-  }
-  generateNumber(){
-    return Math.random();    
   }
 }
